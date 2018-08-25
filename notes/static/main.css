@@ -1,0 +1,123 @@
+body {
+    background-image: linear-gradient(to bottom right, white, #03a9f4);
+    font-family: 'Pacifico', cursive;
+}
+
+.header{
+    background-color: #3f51b5;
+    padding: 1px 0px 1px 0px;
+    text-align: center;
+    color: white;
+    font-family: 'Pacifico', cursive;
+}
+
+.mynavbar{
+    background-color: #bdbdbd;
+}
+
+li>a{
+    color: white !important;
+}
+
+li>a:hover{
+    color:blue !important;
+}
+
+.page-title{
+    text-align:center;
+    font-family: 'Pacifico', cursive;
+    color:white
+}
+
+.group-box-home{
+    margin-left:315px;
+    margin-right:300px;
+}
+
+.group-box-manage-all-notes{
+    margin-left:200px;
+    margin-right:160px;
+}
+
+fieldset{
+    border: solid 1px black !important;
+    padding: 0 10px 10px 10px !important;
+    border-bottom: none !important;
+}
+
+legend{
+    width:inherit !important; /* Or auto */
+    padding:0 10px !important; /* To give a bit of padding on the left and right */
+}
+.about-us{
+    height: 425px;
+    width: 50%;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    margin-top: 50px;
+    margin-left: 355px;
+    font-family: pacifico, cursive;
+}
+.note{
+    margin-top:30px;
+    width:200px;
+    height:245px;
+    margin-left:100px;
+    float:left;
+    background-color:yellow;
+}
+
+.note_title{
+    height: 30px;
+    padding: 5px 0px 0px 10px;
+    background-color: #e91e63;
+    color: white;
+    font-size: 16px;
+}
+
+.note textarea{
+    width:200px;
+    height:165px;
+    background-color:yellow;
+    border-color:yellow;
+}
+
+#new-note-form{
+  margin-left: 485px;
+  margin-right: 495px;
+  color: black;
+  padding-left: 55px;
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid #000000;
+}
+
+#signup-form{
+  margin-left: 488px;
+  margin-right: 470px;
+  color: black;
+  padding-left: 74px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+
+#login-form{
+  margin-left: 525px;
+  margin-right: 462px;
+  color: black;
+  padding-left: 52px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+.submit-btn{
+    font-size: 15px !important;
+    padding-left:105px !important;
+    padding-right:105px !important;
+}
+.nicEdit-main{
+    border-color:yellow !important;
+}
+

@@ -1,0 +1,38 @@
+{% extends "main_template.html" %}
+
+{% block title %}
+    Home | StickyNotes
+{% endblock  %}
+
+{% block content %}
+<style>
+    .nicEdit-panel{
+        display: none !important;
+    }
+    .nicEdit-main{
+        border: 0px !important;
+        disabled="true";
+    }
+</style>
+<div class="page-title">
+ <h1>Recent Notes</h1>
+</div>
+
+<div class="group-box-home">
+        <fieldset>
+                <legend>Recent</legend>
+                
+                {% for note in recent_notes %}
+                <div class="note">
+                    <div class="note_title">
+                        {{note.title|truncatechars:24}}
+                    </div>
+                    <textarea id="home-text-area"disabled>{{note.text}}</textarea>
+                    
+                </div>
+                {% endfor %}
+
+        </fieldset>
+</diiv>
+               
+{% endblock  %}

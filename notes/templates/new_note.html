@@ -1,0 +1,29 @@
+{% extends "main_template.html" %}
+
+{% block title %}
+New Note | StickyNotes
+{% endblock  %}
+
+{% block content %}
+<div class="page-title">
+    <h1>Create New Note</h1>
+</div>
+<br>
+
+<div id="new-note-form">
+  <form method="post" action="/notes/create_note/">
+    {% csrf_token %}
+    <br>
+    <label style="font-size:20px">Title</label>
+    <input type="text" name="title" maxlength="50" style="padding-left:20px;border-radius:20px;margin-left:10px"/>
+    <br>
+    <br>
+    <label style="font-size:20px">Text</label><br>
+    <textarea type="text" id="new_note_text-area" name="text" maxlength="500" style="width:245px;height:220px;"></textarea>
+    <br>
+    <button class="btn btn-primary submit-btn" type="submit">Save</button>
+  </form>
+  
+<br>
+</div>
+{% endblock  %}

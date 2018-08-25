@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Page Title{% endblock %} </title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="{% static "main.css" %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    ​<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+    <script src="{% static "main.js" %}"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="header">
+            <h2><span class="glyphicon glyphicon-list-alt"></span>
+                StickyNotes</h2>
+        </div>
+        <nav class="navbar mynavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="/"><span class="glyphicon glyphicon-home"></span>
+                    Home</a></li>
+                <li><a href="/notes/new_note/"><span class="glyphicon glyphicon-plus"></span>
+                    New</a></li>
+                <li><a href="/notes/manage_all_notes"><span class="glyphicon glyphicon-list-alt"></span>
+                    Manage Notes</a></li>
+                <li><a href="/about">About</a></li>
+                {% if user.is_authenticated %}
+                    <li><a style="margin-left:750px"><span class="glyphicon glyphicon-user"></span>
+                        {{ user.get_username }}</a></li>
+                    <li><a href="/notes/logout"><span class="glyphicon glyphicon-log-out"></span>
+                        logout</a></li>
+                {% endif %}
+            </ul>   
+        </nav>
+        {% block content %}
+            Body Content
+        {% endblock %}
+    </div>
+</body>
+
+</html>

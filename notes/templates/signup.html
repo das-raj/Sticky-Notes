@@ -1,0 +1,35 @@
+{% extends 'main_template.html' %}
+
+{% block content %}
+  <style>
+    input{
+      padding-right: 50px;
+    }
+  </style>
+  
+  <div id="signup-form">
+    <h2>Sign up</h2>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+          <p>
+            {{ field.label_tag }}<br>
+            {{ field }}
+            <!--
+            {% if field.help_text %}
+              <br><small style="color: grey">{{ field.help_text }}</small>
+            {% endif %}
+            {% for error in field.errors %}
+              <p style="color: red">{{ error }}</p><br>
+            {% endfor %}
+            -->
+          </p>
+        {% endfor %}
+        <button class="btn btn-primary submit-btn">Sign up</button>
+    </form>
+      
+    <a href="/notes/login" style="padding-left:15px;">Have an account?, Log In</a>
+    <br>
+    <br>
+</div>
+{% endblock %}

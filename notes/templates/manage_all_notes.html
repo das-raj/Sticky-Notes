@@ -1,0 +1,43 @@
+{% extends "main_template.html" %}
+
+{% block title %}
+Manage All Note | StickyNotes
+{% endblock  %}
+
+{% block content %}
+<div class="page-title">
+    <h1>Manage All Notes</h1>
+</div>
+<br>
+
+<div class="group-box-manage-all-notes" style="margin-left: 50px;margin-right: 80px;">
+        <fieldset>
+            <legend>All Notes</legend>
+                
+            {% for note in all_notes %}
+           
+                <div class="note" style="height:350px;width: 250px;">
+                        <div class="note_title">
+                            {{note.title|truncatechars:24}}
+                        </div>
+                        <form id="form{{note.id}}" action="/notes/update/{{note.id}}" method="POST">
+                            {% csrf_token %}
+                            <textarea name="updated_text" id="text_area{{note.id}}" style="width:250px;" disabled>{{note.text}}</textarea>
+                            <a onclick="editVisible({{note.id}})">
+                                <span class="glyphicon glyphicon-edit" style="font-size:17px;padding-left:10px"></span>
+                                </a>
+                            <a href="/notes/delete/{{note.id}}"}>
+                                <span class="glyphicon glyphicon-trash" style="float:right;font-size:17px;padding-right:10px"></span>
+                                </a>
+                            <br>
+                            <button style="width:250px;display:none;" type="submit" form="form{{note.id}}" id="edit_btn{{note.id}}" class="btn btn-danger" style="display:none;width:200px;border-radius:0px">Save</button>
+                        </form>
+                </div>
+                              
+            {% endfor %}
+
+        </fieldset>
+</div>
+
+
+{% endblock %}
